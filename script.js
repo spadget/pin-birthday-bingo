@@ -1,3 +1,11 @@
+console.log(`
+    
+    Built with love by Pinbow 🌈
+    No cheating, Pin.
+    The website knows.
+    
+    `);
+
 const SUPABASE_URL = "https://aakgqbiqbtbgaublvutw.supabase.co";
 const SUPABASE_KEY = "sb_publishable_g_fnLMPTtdJFZMD3zisXsQ_pbshTVMG";
 

@@ -28,14 +28,30 @@ nav {
 }
 
 .bingo-square {
+    position: relative;
     border: 1px solid #ccc;
-    padding: 20px;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bingo-square.completed {
-    text-decoration: line-through;
+    opacity: 0.45;
+    filter: grayscale(100%);
+    position: relative;
+}
+
+.bingo-square.completed::after {
+    content: "✓";
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .toast {
