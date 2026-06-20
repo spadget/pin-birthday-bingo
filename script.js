@@ -66,21 +66,15 @@ const SUPABASE_KEY = "sb_publishable_g_fnLMPTtdJFZMD3zisXsQ_pbshTVMG";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-const filmItems = [
-    "Film 1",
-    "Film 2",
-    "Film 3",
-    "Film 4",
-    "Film 5"
-];
+const filmItems = Array.from(
+    { length: 25 },
+    (_, i) => `Film ${i + 1}`
+);
 
-const geocacheItems = [
-    "Cache 1",
-    "Cache 2",
-    "Cache 3",
-    "Cache 4",
-    "Cache 5"
-];
+const geocacheItems = Array.from(
+    { length: 25 },
+    (_, i) => `Cache ${i + 1}`
+);
 
 document.querySelectorAll(".tab-button").forEach(button => {
     button.addEventListener("click", () => {
