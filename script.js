@@ -35,30 +35,36 @@ async function loadProgress() {
         .select("*");
 
     if (error) {
-    console.error("Could not save progress:", error);
-    showToast("That didn’t save. Check your connection and try again.");
-}
+        console.error("Could not load progress:", error);
+        return [];
+    }
 
     return data;
 }
 
 async function saveProgress(board, item, completed) {
-    const { error } = await supabaseClient
-        .from("bingo_progress")
-        .upsert(
-            {
-                board,
-                item,
-                completed,
-                updated_at: new Date().toISOString()
-            },
-            {
-                onConflict: "board,item"
-            }
-        );
+    try {
+        const { error } = await supabaseClient
+            .from("bingo_progress")
+            .upsert(
+                {
+                    board,
+                    item,
+                    completed,
+                    updated_at: new Date().toISOString()
+                },
+                {
+                    onConflict: "board,item"
+                }
+            );
 
-    if (error) {
+        if (error) {
+            console.error("Could not save progress:", error);
+            showToast("That didn’t save. Check your connection and try again.");
+        }
+    } catch (error) {
         console.error("Could not save progress:", error);
+        showToast("That didn’t save. Check your connection and try again.");
     }
 }
 
