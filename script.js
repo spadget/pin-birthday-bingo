@@ -1,55 +1,24 @@
-const filmItems = [
-    "Film 1",
-    "Film 2",
-    "Film 3",
-    "Film 4",
-    "Film 5"
-];
+const SUPABASE_URL = "PASTE_YOUR_PROJECT_URL_HERE";
+const SUPABASE_KEY = "PASTE_YOUR_PUBLIC_KEY_HERE";
 
-const geocacheItems = [
-    "Cache 1",
-    "Cache 2",
-    "Cache 3",
-    "Cache 4",
-    "Cache 5"
-];
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 
-document.querySelectorAll(".tab-button").forEach(button => {
-    button.addEventListener("click", () => {
+async function testConnection() {
 
-        document.querySelectorAll(".tab-button")
-            .forEach(btn => btn.classList.remove("active"));
+    const { data, error } = await supabaseClient
+        .from("bingo_progress")
+        .select("*");
 
-        document.querySelectorAll(".tab-content")
-            .forEach(tab => tab.classList.remove("active"));
+    if (error) {
+        console.error("Supabase error:", error);
+        return;
+    }
 
-        button.classList.add("active");
-
-        document
-            .getElementById(button.dataset.tab)
-            .classList.add("active");
-    });
-});
-
-function createGrid(containerId, items) {
-
-    const container = document.getElementById(containerId);
-
-    items.forEach(item => {
-
-        const square = document.createElement("div");
-
-        square.className = "bingo-square";
-
-        square.textContent = item;
-
-        square.addEventListener("click", () => {
-            square.classList.toggle("completed");
-        });
-
-        container.appendChild(square);
-    });
+    console.log("Connected!");
+    console.log(data);
 }
 
-createGrid("film-grid", filmItems);
-createGrid("geocache-grid", geocacheItems);
+testConnection();
