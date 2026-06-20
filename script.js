@@ -35,9 +35,9 @@ async function loadProgress() {
         .select("*");
 
     if (error) {
-        console.error("Could not load progress:", error);
-        return [];
-    }
+    console.error("Could not save progress:", error);
+    showToast("That didn’t save. Check your connection and try again.");
+}
 
     return data;
 }
@@ -100,3 +100,14 @@ async function initialisePage() {
 }
 
 initialisePage();
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+    toast.style.display = "block";
+
+    setTimeout(() => {
+        toast.style.display = "none";
+    }, 4000);
+}

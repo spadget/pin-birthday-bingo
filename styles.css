@@ -37,3 +37,16 @@ nav {
 .bingo-square.completed {
     text-decoration: line-through;
 }
+
+.toast {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 12px 16px;
+    background: #222;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
