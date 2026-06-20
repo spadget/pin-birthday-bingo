@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin's Birthday Bingo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎉 Pin's Birthday Challenge 🎉</h1>
+    </header>
+
+    <nav>
+        <button class="tab-button active" data-tab="home">Home</button>
+        <button class="tab-button" data-tab="films">Film Bingo</button>
+        <button class="tab-button" data-tab="geocaching">Geocaching Bingo</button>
+    </nav>
+
+    <main>
+        <section id="home" class="tab-content active">
+            <h2>Welcome!</h2>
+            <p>Birthday challenge instructions go here.</p>
+        </section>
+
+        <section id="films" class="tab-content">
+            <h2>Film Bingo</h2>
+            <div id="film-grid" class="bingo-grid"></div>
+        </section>
+
+        <section id="geocaching" class="tab-content">
+            <h2>Geocaching Bingo</h2>
+            <div id="geocache-grid" class="bingo-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
