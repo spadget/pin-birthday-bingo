@@ -117,3 +117,7 @@ function showToast(message) {
         toast.style.display = "none";
     }, 4000);
 }
+
+window.addEventListener("online", () => {
+    showToast("Connection restored.");
+});
