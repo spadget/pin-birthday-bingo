@@ -207,6 +207,7 @@ main {
     }
 
     .bingo-grid {
+        margin: 0px;
         padding: 12px;
         gap: 2px;
     }
