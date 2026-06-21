@@ -248,3 +248,18 @@ main {
         padding: 4px;
     }
 }
+/* Home page content box */
+
+#home p {
+    background: var(--colour-grid-square-background);
+    margin-top: 10px;
+    padding: 24px;
+}
+
+@media (max-width: 700px) {
+    #home p {
+        border: 1px solid var(--colour-grid-square-border);
+        margin: 8px;
+        padding: 16px;
+    }
+}
