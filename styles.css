@@ -197,12 +197,13 @@ main {
     }
 
     nav {
+        gap: 2px;
         padding-left: 36px;
     }
 
     .tab-button {
         flex: 0 0 auto;
-        min-height: 58px;
+        min-height: 30px;
     }
 
     .bingo-grid {
