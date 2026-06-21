@@ -191,6 +191,56 @@ async function saveProgress(board, item, completed) {
     }
 }
 
+let activeModalItem = null;
+let activeModalBoard = null;
+let activeModalSquare = null;
+let activeModalCompleted = false;
+
+function openMobileModal(board, item, square) {
+    activeModalItem = item;
+    activeModalBoard = board;
+    activeModalSquare = square;
+    activeModalCompleted = square.classList.contains("completed");
+
+    renderMobileModal();
+
+    document.getElementById("mobile-modal").classList.add("active");
+}
+
+function renderMobileModal() {
+    const card = document.getElementById("mobile-modal-card");
+
+    card.innerHTML = "";
+    card.classList.toggle("completed", activeModalCompleted);
+
+    if (activeModalCompleted) {
+        const image = document.createElement("img");
+        image.src = activeModalItem.image;
+        image.alt = activeModalItem.text;
+        card.appendChild(image);
+    } else {
+        card.textContent = activeModalItem.text;
+    }
+}
+
+async function toggleMobileModalCompletion() {
+    activeModalCompleted = !activeModalCompleted;
+
+    activeModalSquare.classList.toggle("completed", activeModalCompleted);
+
+    await saveProgress(
+        activeModalBoard,
+        activeModalItem.id,
+        activeModalCompleted
+    );
+
+    renderMobileModal();
+}
+
+function closeMobileModal() {
+    document.getElementById("mobile-modal").classList.remove("active");
+}
+
 function createGrid(containerId, board, items, savedProgress) {
     const container = document.getElementById(containerId);
     container.innerHTML = "";
@@ -225,16 +275,27 @@ function createGrid(containerId, board, items, savedProgress) {
         }
 
         square.addEventListener("click", async () => {
+            const isMobile = window.matchMedia("(max-width: 700px)").matches;
+        
+            if (isMobile) {
+                openMobileModal(board, item, square);
+                return;
+            }
+        
             square.classList.toggle("completed");
-
+        
             const completed = square.classList.contains("completed");
-
+        
             await saveProgress(board, item.id, completed);
         });
 
         container.appendChild(square);
     });
 }
+
+document.getElementById("mobile-modal-card").addEventListener("click", toggleMobileModalCompletion);
+
+document.getElementById("mobile-modal-close").addEventListener("click", closeMobileModal);
 
 async function initialisePage() {
     const savedProgress = await loadProgress();
