@@ -5,7 +5,7 @@
     --font-mobile-numbers: "Permanent Marker", cursive;
 
     --colour-background: #F4FBF8;
-    --colour-h1-text: #575761;
+    --colour-h1-text: #788BFF;
     --colour-h2-text: #ffffff;
     --colour-body-text: #000000;
     --colour-nav-tab-background: #788BFF;
@@ -75,7 +75,7 @@ nav {
     min-height: 30px;
     position: relative;
     z-index: 10;
-    color: var(--colour-body-text);
+    color: var(--colour-h2-text);
 }
 
 .tab-button.active {
@@ -134,7 +134,6 @@ main {
 }
 
 .tab-content > p {
-    background: var(--colour-text-box-background);
     padding: 24px;
     margin: 0;
 }
