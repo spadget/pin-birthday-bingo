@@ -66,3 +66,19 @@ nav {
     border-radius: 8px;
     text-align: center;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+.bingo-grid {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.bingo-square {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
