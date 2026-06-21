@@ -6,7 +6,8 @@
 
     --colour-background: #F4FBF8;
     --colour-h1-text: #788BFF;
-    --colour-h2-text: #ffffff;
+    --colour-h2-text: #788BFF;
+    --colour-active-tab-text: #ffffff;
     --colour-body-text: #000000;
     --colour-nav-tab-background: #788BFF;
     --colour-text-box-background: #ffffff;
@@ -53,6 +54,7 @@ h2 {
 h1 {
     padding: 0 0 0 24px;
     font-size: 50px;
+    font-weight: 700;
     color: var(--colour-h1-text);
 }
 
@@ -80,6 +82,7 @@ nav {
 
 .tab-button.active {
     background: var(--colour-nav-tab-background);
+    color: var(--colour-active-tab-text);
     border-radius: 18px 18px 0 0;
     z-index: 20;
     isolation: isolate;
