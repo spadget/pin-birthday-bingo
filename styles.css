@@ -195,13 +195,14 @@ main {
     }
 
     nav {
-        gap: 2px;
+        gap: 0px;
         padding-left: 36px;
     }
 
     .tab-button {
         flex: 0 0 auto;
         min-height: 30px;
+        margin-right:-10px;
     }
 
     .bingo-grid {
