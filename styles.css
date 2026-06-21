@@ -218,6 +218,7 @@ main {
     .bingo-grid {
         padding-left: 12px;
         padding-right: 12px;
+        gap: 2px;
     }
 }
 
