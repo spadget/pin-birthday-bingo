@@ -171,17 +171,20 @@ main {
 .bingo-square.completed {
     background: var(--colour-completed-square-background);
     color: var(--colour-completed-square-text);
-    opacity: 0.65;
 }
 
 .bingo-square.completed::after {
     content: "✓";
     position: absolute;
-    top: 8px;
-    right: 10px;
-    font-size: 28px;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: min(8vw, 120px);
     font-weight: bold;
     color: var(--colour-completed-square-tick);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .mobile-number {
