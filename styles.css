@@ -3,6 +3,23 @@
     --font-tabs: "Cabin Sketch", sans-serif;
     --font-body: "Lato", sans-serif;
     --font-mobile-numbers: "Permanent Marker", cursive;
+
+    /* Colours */
+    --colour-background: #F4FBF8;
+    --colour-h1-text: #575761;
+    --colour-h2-text: #ffffff;
+    --colour-body-text: #000000;
+    --colour-nav-tab-background: #788BFF;
+    --colour-text-box-background: #ffffff;
+    --colour-grid-square-background: #ffffff;
+    --colour-grid-square-border: #000000;
+    --colour-grid-square-text: #000000;
+    --colour-grid-square-number: #000000;
+    --colour-completed-square-background: rgba(0, 0, 0, 0.1);
+    --colour-completed-square-text: #000000;
+    --colour-completed-square-tick: #FFBF46;
+    --colour-toast: #FFBF46;
+    --colour-toast-text: #ffffff;
 }
 
 * {
@@ -35,7 +52,7 @@ h2 {
 
 h1 {
     padding: 0 0 0 24px;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 nav {
@@ -227,7 +244,7 @@ main {
         h1 {
             width: 100%;
             text-align: center;
-            padding: 0;
+            padding: 30px 0px 0px;
             margin-left: 0;
             margin-right: 0;
         }
