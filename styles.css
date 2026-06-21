@@ -103,7 +103,7 @@ main {
     margin-right: auto;
 }
 
-/* Piniverse tab header panel */
+/* Piniverse tab header shelf */
 body {
     background: #eeeeee;
 }
@@ -121,6 +121,7 @@ nav {
     gap: 8px;
     align-items: stretch;
     padding-top: 12px;
+    padding-left: 36px;
     margin-bottom: 0;
 }
 
@@ -148,7 +149,6 @@ nav {
     bottom: 0;
     width: 18px;
     height: 18px;
-    background: transparent;
 }
 
 .tab-button.active::before {
@@ -164,13 +164,24 @@ nav {
 }
 
 main {
-    background: white;
-    border-radius: 0 18px 18px 18px;
-    padding: 24px;
+    background: transparent;
+    padding: 0;
     margin-bottom: 24px;
 }
 
-.bingo-grid {
-    background: #eeeeee;
-    margin-top: 24px;
+.tab-content {
+    background: transparent;
+    padding: 0;
+}
+
+.tab-content > h2 {
+    background: white;
+    border-radius: 18px 18px 0 0;
+    padding: 24px 24px 12px;
+    margin: 0;
+}
+
+.tab-content > p {
+    padding: 24px;
+    margin: 0;
 }
