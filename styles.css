@@ -332,7 +332,7 @@ main {
 
     .mobile-modal-card {
         width: calc(100% - 16px);
-        margin-top: 8px;
+        margin-top: 252.86px;
         aspect-ratio: 1 / 1;
         background: var(--colour-grid-square-background);
         border: 1px solid var(--colour-grid-square-border);
