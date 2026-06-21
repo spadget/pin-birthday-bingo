@@ -242,3 +242,8 @@ main {
         }
     }
 }
+
+.tab-button.active::before,
+.tab-button.active::after {
+    background: transparent;
+}
