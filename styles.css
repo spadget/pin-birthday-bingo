@@ -103,14 +103,14 @@ main {
     margin-right: auto;
 }
 
-/* Connected browser-style tabs */
+/* Connected browser-style tabs with subtle shoulders */
 body {
     background: #eeeeee;
 }
 
 nav {
     display: flex;
-    gap: 4px;
+    gap: 8px;
     align-items: flex-end;
     margin-bottom: 0;
     padding-top: 12px;
@@ -119,17 +119,40 @@ nav {
 
 .tab-button {
     border: none;
-    border-radius: 18px 18px 0 0;
-    padding: 12px 22px;
     background: transparent;
     cursor: pointer;
     font-size: 16px;
+    padding: 12px 22px;
     position: relative;
+    z-index: 1;
 }
 
 .tab-button.active {
     background: white;
-    z-index: 2;
+    border-radius: 18px 18px 0 0;
+    z-index: 3;
+}
+
+.tab-button.active::before,
+.tab-button.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+}
+
+.tab-button.active::before {
+    left: -18px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 8px 8px 0 8px white;
+}
+
+.tab-button.active::after {
+    right: -18px;
+    border-bottom-left-radius: 18px;
+    box-shadow: -8px 8px 0 8px white;
 }
 
 main {
