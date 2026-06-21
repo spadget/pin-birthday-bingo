@@ -55,13 +55,13 @@ nav {
     padding: 12px;
     min-height: 30px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .tab-button.active {
     background: white;
     border-radius: 18px 18px 0 0;
-    z-index: 4;
+    z-index: 20;
     isolation: isolate;
 }
 
