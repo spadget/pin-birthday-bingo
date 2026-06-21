@@ -103,13 +103,13 @@ nav {
 .tab-button.active::before {
     left: -18px;
     border-bottom-right-radius: 18px;
-    box-shadow: 8px 8px 0 8px var(--colour-nav-tab-background);
+    box-shadow: 6px 6px 0 6px var(--colour-nav-tab-background);
 }
 
 .tab-button.active::after {
     right: -18px;
     border-bottom-left-radius: 18px;
-    box-shadow: -8px 8px 0 8px var(--colour-nav-tab-background);
+    box-shadow: -6px 6px 0 6px var(--colour-nav-tab-background);
 }
 
 main {
