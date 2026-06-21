@@ -103,31 +103,37 @@ main {
     margin-right: auto;
 }
 
-/* Browser-style tabs */
+/* Connected browser-style tabs */
+body {
+    background: #eeeeee;
+}
+
 nav {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     align-items: flex-end;
     margin-bottom: 0;
     padding-top: 12px;
+    border-bottom: 1px solid #d0d0d0;
 }
 
 .tab-button {
     border: none;
     border-radius: 18px 18px 0 0;
     padding: 12px 22px;
-    background: #e8e8e8;
+    background: transparent;
     cursor: pointer;
     font-size: 16px;
+    position: relative;
 }
 
 .tab-button.active {
     background: white;
-    position: relative;
     z-index: 2;
 }
 
 main {
-    border-top: 1px solid #ddd;
-    padding-top: 24px;
+    background: white;
+    border-top: none;
+    padding: 24px;
 }
