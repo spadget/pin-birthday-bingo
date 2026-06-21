@@ -1,3 +1,33 @@
+/* Font controls */
+:root {
+    --font-heading: "Cabin Sketch", sans-serif;
+    --font-tabs: "Cabin Sketch", sans-serif;
+    --font-body: "Lato", sans-serif;
+    --font-mobile-numbers: "Permanent Marker", cursive;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+}
+
+.tab-button {
+    font-family: var(--font-tabs);
+}
+
+.bingo-square {
+    font-family: var(--font-body);
+}
+
+.mobile-number {
+    font-family: var(--font-mobile-numbers);
+}
+
+
 * {
     box-sizing: border-box;
 }
