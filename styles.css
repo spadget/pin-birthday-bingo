@@ -12,7 +12,7 @@
     --colour-nav-tab-background: #788BFF;
     --colour-text-box-background: #ffffff;
     --colour-grid-square-background: #ffffff;
-    --colour-grid-square-border: #000000;
+    --colour-grid-square-border: #575761;
     --colour-grid-square-text: #000000;
     --colour-grid-square-number: #000000;
     --colour-completed-square-background: rgba(0, 0, 0, 0.1);
@@ -95,21 +95,20 @@ nav {
     bottom: 0;
     width: 18px;
     height: 18px;
-    background: transparent;
-    z-index: -2;
+    background: var(--colour-background);
     pointer-events: none;
 }
 
 .tab-button.active::before {
     left: -18px;
     border-bottom-right-radius: 18px;
-    box-shadow: 6px 6px 0 6px var(--colour-nav-tab-background);
+    box-shadow: 9px 9px 0 0 var(--colour-nav-tab-background);
 }
 
 .tab-button.active::after {
     right: -18px;
     border-bottom-left-radius: 18px;
-    box-shadow: -6px 6px 0 6px var(--colour-nav-tab-background);
+    box-shadow: -9px 9px 0 0 var(--colour-nav-tab-background);
 }
 
 main {
