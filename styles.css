@@ -172,7 +172,7 @@ main {
     background: var(--colour-completed-square-background);
     color: var(--colour-completed-square-text);
     opacity: 0.45;
-    filter: grayscale(100%);
+    filter: none;
 }
 
 .bingo-square.completed::after {
