@@ -323,15 +323,16 @@ main {
         display: flex;
         position: fixed;
         inset: 0;
-        background: var(--colour-background);
+        background: transparent;
         z-index: 999;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        padding: 16px;
+        padding: 0;
     }
 
     .mobile-modal-card {
-        width: 100%;
+        width: calc(100% - 16px);
+        margin-top: 8px;
         aspect-ratio: 1 / 1;
         background: var(--colour-grid-square-background);
         border: 1px solid var(--colour-grid-square-border);
@@ -368,17 +369,5 @@ main {
 
     .mobile-modal-card.completed::after {
         display: block;
-    }
-
-    .mobile-modal-close {
-        position: fixed;
-        top: 12px;
-        right: 16px;
-        border: none;
-        background: transparent;
-        font-size: 40px;
-        line-height: 1;
-        cursor: pointer;
-        z-index: 1000;
     }
 }

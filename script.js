@@ -293,9 +293,12 @@ function createGrid(containerId, board, items, savedProgress) {
     });
 }
 
-document.getElementById("mobile-modal-card").addEventListener("click", toggleMobileModalCompletion);
+document.getElementById("mobile-modal-card").addEventListener("click", event => {
+    event.stopPropagation();
+    toggleMobileModalCompletion();
+});
 
-document.getElementById("mobile-modal-close").addEventListener("click", closeMobileModal);
+document.getElementById("mobile-modal").addEventListener("click", closeMobileModal);
 
 async function initialisePage() {
     const savedProgress = await loadProgress();
