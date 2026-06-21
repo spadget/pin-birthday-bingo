@@ -284,3 +284,32 @@ main {
         font-size: 1.6rem;
     }
 }
+
+.completed-image {
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bingo-square.completed .completed-image {
+    display: block;
+}
+
+.bingo-square.completed .desktop-challenge-text,
+.bingo-square.completed .mobile-number {
+    display: none;
+}
+
+.bingo-square.completed::after {
+    content: "✓";
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--colour-completed-square-tick);
+    z-index: 2;
+}

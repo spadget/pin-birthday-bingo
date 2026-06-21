@@ -207,6 +207,11 @@ function createGrid(containerId, board, items, savedProgress) {
         numberSpan.className = "mobile-number";
         numberSpan.textContent = item.number;
 
+        const image = document.createElement("img");
+        image.className = "completed-image";
+        image.src = item.image;
+
+        square.appendChild(image);
         square.appendChild(textSpan);
         square.appendChild(numberSpan);
 
