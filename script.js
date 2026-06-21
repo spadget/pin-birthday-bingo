@@ -68,12 +68,22 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const filmItems = Array.from(
     { length: 25 },
-    (_, i) => `Film ${i + 1}`
+    (_, i) => ({
+        id: `film-${i + 1}`,
+        number: i + 1,
+        text: `Film ${i + 1}`,
+        image: `images/film-${i + 1}.png`
+    })
 );
 
 const geocacheItems = Array.from(
     { length: 25 },
-    (_, i) => `Cache ${i + 1}`
+    (_, i) => ({
+        id: `cache-${i + 1}`,
+        number: i + 1,
+        text: `Cache ${i + 1}`,
+        image: `images/cache-${i + 1}.png`
+    })
 );
 
 document.querySelectorAll(".tab-button").forEach(button => {
@@ -132,11 +142,11 @@ function createGrid(containerId, board, items, savedProgress) {
     items.forEach(item => {
         const square = document.createElement("div");
         square.className = "bingo-square";
-        square.textContent = item;
+        square.textContent = item.text;
 
         const savedItem = savedProgress.find(progress =>
             progress.board === board &&
-            progress.item === item
+            progress.item === item.id
         );
 
         if (savedItem?.completed) {
@@ -148,7 +158,7 @@ function createGrid(containerId, board, items, savedProgress) {
 
             const completed = square.classList.contains("completed");
 
-            await saveProgress(board, item, completed);
+            await saveProgress(board, item.id, completed);
         });
 
         container.appendChild(square);
@@ -178,3 +188,10 @@ function showToast(message) {
 window.addEventListener("online", () => {
     showToast("Connection restored.");
 });
+
+{
+    id: "film-1",
+    number: 1,
+    text: "Challenge text here",
+    image: "images/placeholder.png"
+  }
