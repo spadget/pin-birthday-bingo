@@ -189,9 +189,3 @@ window.addEventListener("online", () => {
     showToast("Connection restored.");
 });
 
-{
-    id: "film-1",
-    number: 1,
-    text: "Challenge text here",
-    image: "images/placeholder.png"
-  }
