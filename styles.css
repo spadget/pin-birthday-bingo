@@ -5,7 +5,7 @@
     --font-mobile-numbers: "Permanent Marker", cursive;
 
     --colour-background: #F4FBF8;
-    --colour-h1-text: #788BFF;
+    --colour-h1-text: #5c72ff;
     --colour-h2-text: #ffffff;
     --colour-active-tab-text: #ffffff;
     --colour-body-text: #000000;
@@ -264,3 +264,23 @@ main {
     }
 }
 
+.mobile-number {
+    display: none;
+}
+
+.desktop-challenge-text {
+    display: inline;
+}
+
+@media (max-width: 700px) {
+    .desktop-challenge-text {
+        display: none;
+    }
+
+    .mobile-number {
+        display: inline;
+        font-family: var(--font-mobile-numbers);
+        color: var(--colour-grid-square-number);
+        font-size: 1.6rem;
+    }
+}

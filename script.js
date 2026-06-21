@@ -142,7 +142,17 @@ function createGrid(containerId, board, items, savedProgress) {
     items.forEach(item => {
         const square = document.createElement("div");
         square.className = "bingo-square";
-        square.textContent = item.text;
+
+        const textSpan = document.createElement("span");
+        textSpan.className = "desktop-challenge-text";
+        textSpan.textContent = item.text;
+
+        const numberSpan = document.createElement("span");
+        numberSpan.className = "mobile-number";
+        numberSpan.textContent = item.number;
+
+        square.appendChild(textSpan);
+        square.appendChild(numberSpan);
 
         const savedItem = savedProgress.find(progress =>
             progress.board === board &&
