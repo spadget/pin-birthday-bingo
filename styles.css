@@ -211,4 +211,34 @@ main {
         padding-right: 12px;
         gap: 2px;
     }
+
+    @media (max-width: 700px) {
+        body {
+            padding: 0;
+        }
+    
+        header {
+            width: 100%;
+            padding: 0;
+        }
+    
+        h1 {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    
+        .bingo-grid {
+            width: 100%;
+            padding-left: 8px;
+            padding-right: 8px;
+            gap: 2px;
+        }
+    
+        .bingo-square {
+            padding: 4px;
+        }
+    }
 }
