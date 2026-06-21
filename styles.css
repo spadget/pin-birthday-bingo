@@ -73,7 +73,7 @@ nav {
     width: 18px;
     height: 18px;
     background: #eeeeee;
-    z-index: -1;
+    z-index: -2;
     pointer-events: none;
 }
 
