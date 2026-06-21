@@ -103,18 +103,25 @@ main {
     margin-right: auto;
 }
 
-/* Connected browser-style tabs with subtle shoulders */
+/* Piniverse tab header panel */
 body {
     background: #eeeeee;
+}
+
+header,
+nav,
+main {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav {
     display: flex;
     gap: 8px;
-    align-items: flex-end;
-    margin-bottom: 0;
+    align-items: stretch;
     padding-top: 12px;
-    border-bottom: 1px solid #d0d0d0;
+    margin-bottom: 0;
 }
 
 .tab-button {
@@ -123,6 +130,7 @@ nav {
     cursor: pointer;
     font-size: 16px;
     padding: 12px 22px;
+    min-height: 58px;
     position: relative;
     z-index: 1;
 }
@@ -157,6 +165,12 @@ nav {
 
 main {
     background: white;
-    border-top: none;
+    border-radius: 0 18px 18px 18px;
     padding: 24px;
+    margin-bottom: 24px;
+}
+
+.bingo-grid {
+    background: #eeeeee;
+    margin-top: 24px;
 }
