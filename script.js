@@ -66,22 +66,78 @@ const SUPABASE_KEY = "sb_publishable_g_fnLMPTtdJFZMD3zisXsQ_pbshTVMG";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+const filmTexts = [
+    "Watch a film you loved as a teenager",
+    "Watch a film with Breed",
+    "Watch a film alone at the cinema",
+    "Watch a true crime documentary",
+    "Watch something set in another country",
+    "Watch a film with snacks in pyjamas",
+    "Watch a film released the year you were born",
+    "Watch something with a ridiculous plot",
+    "Watch a film Rainbow recommends",
+    "Watch a film with a brilliant soundtrack",
+    "Watch something cosy",
+    "Watch a film you know nothing about",
+    "Watch a film with a strong female lead",
+    "Watch something animated",
+    "Watch a film that makes you laugh",
+    "Watch a film that makes you cry",
+    "Watch something spooky",
+    "Watch a film with a twist",
+    "Watch a film under 90 minutes",
+    "Watch a film over 2 hours",
+    "Watch something with subtitles",
+    "Watch a film from the 90s",
+    "Watch a film chosen purely by the poster",
+    "Watch a film with a hot chocolate",
+    "Watch the final film and declare victory"
+];
+
 const filmItems = Array.from(
     { length: 25 },
     (_, i) => ({
         id: `film-${i + 1}`,
         number: i + 1,
-        text: `Film ${i + 1}`,
+        text: filmTexts[i],
         image: `images/film-${i + 1}.png`
     })
 );
+
+const geocacheTexts = [
+    "Find your first birthday challenge cache",
+    "Find a cache with Breed",
+    "Find a cache with Jahosafat",
+    "Find a cache near water",
+    "Find a cache in the woods",
+    "Find a tiny cache",
+    "Find a cache big enough for swaps",
+    "Leave a glow-in-the-dark duck",
+    "Leave a glow-in-the-dark sticker",
+    "Find a cache with a nice view",
+    "Find a cache on a rainy day",
+    "Find a cache on a sunny day",
+    "Find a cache less than 10 minutes from home",
+    "Find a cache somewhere new",
+    "Find a cache after dark",
+    "Find a cache with a funny name",
+    "Find a cache rated easy",
+    "Find a cache rated a bit trickier",
+    "Take a photo of something odd nearby",
+    "Find a cache and reward yourself with a treat",
+    "Find a cache while wearing cosy clothes",
+    "Find a cache that involves a short walk",
+    "Find a cache with a proper logbook",
+    "Move or discover the family trackable",
+    "Complete the final cache and claim your glory"
+];
 
 const geocacheItems = Array.from(
     { length: 25 },
     (_, i) => ({
         id: `cache-${i + 1}`,
         number: i + 1,
-        text: `Cache ${i + 1}`,
+        text: geocacheTexts[i],
         image: `images/cache-${i + 1}.png`
     })
 );
