@@ -194,6 +194,12 @@ main {
         padding-right: 16px;
     }
 
+    h1 {
+        text-align: center;
+        padding: 0px;
+
+    }
+    
     nav,
     main {
         max-width: none;
