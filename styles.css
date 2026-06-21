@@ -202,7 +202,8 @@ main {
     .tab-button {
         flex: 0 0 auto;
         min-height: 30px;
-        margin-right:-8px;
+        margin-right:-6px;
+        padding: 10px;
     }
 
     .bingo-grid {
