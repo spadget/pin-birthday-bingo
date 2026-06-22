@@ -67,7 +67,7 @@ const SUPABASE_KEY = "sb_publishable_g_fnLMPTtdJFZMD3zisXsQ_pbshTVMG";
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const filmTexts = [
-    "Watch a film you loved as a teenager",
+    "Watch a film with a low Rotten Tomatoes score and defend one good thing about it. Find one moment, performance, sound choice, costume, line or idea that genuinely worked.",
     "Watch a film with Breed",
     "Watch a film alone at the cinema",
     "Watch a true crime documentary",
