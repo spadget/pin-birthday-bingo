@@ -67,7 +67,7 @@ const SUPABASE_KEY = "sb_publishable_g_fnLMPTtdJFZMD3zisXsQ_pbshTVMG";
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const filmTexts = [
-    "Watch a film with a low Rotten Tomatoes score and defend one good thing about it. Find one moment, performance, sound choice, costume, line or idea that genuinely worked.",
+    "<strong>Watch a film with a low Rotten Tomatoes score and defend one good thing about it.</strong><br><br>Find one moment, performance, sound choice, costume, line or idea that genuinely worked.",
     "Watch a film with Breed",
     "Watch a film alone at the cinema",
     "Watch a true crime documentary",
@@ -251,7 +251,7 @@ function createGrid(containerId, board, items, savedProgress) {
 
         const textSpan = document.createElement("span");
         textSpan.className = "desktop-challenge-text";
-        textSpan.textContent = item.text;
+        textSpan.innerHTML = item.text;
 
         const numberSpan = document.createElement("span");
         numberSpan.className = "mobile-number";
