@@ -324,3 +324,9 @@ window.addEventListener("online", () => {
     showToast("Connection restored.");
 });
 
+document
+    .getElementById("mobile-modal-close")
+    .addEventListener("click", event => {
+        event.stopPropagation();
+        closeMobileModal();
+    });
