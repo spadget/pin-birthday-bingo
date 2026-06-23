@@ -361,3 +361,9 @@ main {
     }
 
 }
+
+h1,
+h2,
+.tab-button {
+    font-weight: 400;
+}
