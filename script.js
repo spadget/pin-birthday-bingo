@@ -219,7 +219,7 @@ function renderMobileModal() {
         image.alt = activeModalItem.text;
         card.appendChild(image);
     } else {
-        card.textContent = activeModalItem.text;
+        card.innerHTML = activeModalItem.text;
     }
 }
 
