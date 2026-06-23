@@ -330,3 +330,7 @@ document
         event.stopPropagation();
         closeMobileModal();
     });
+    
+    const rect = square.getBoundingClientRect();
+
+    card.style.marginTop = `${rect.top - card.offsetHeight - 10}px`;
