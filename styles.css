@@ -367,3 +367,11 @@ h2,
 .tab-button {
     font-weight: 400;
 }
+.mobile-modal-card {
+    display: block;
+}
+
+.mobile-modal-card strong {
+    display: block;
+    margin-bottom: 24px;
+}
