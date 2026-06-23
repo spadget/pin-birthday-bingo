@@ -293,16 +293,6 @@ main {
     display: none;
 }
 
-.bingo-square.completed::after {
-    content: "✓";
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    font-size: 40px;
-    font-weight: bold;
-    color: var(--colour-completed-square-tick);
-    z-index: 2;
-}
 
 .mobile-modal {
     display: none;
@@ -345,19 +335,4 @@ main {
         object-fit: cover;
     }
 
-    .mobile-modal-card::after {
-        content: "✓";
-        display: none;
-        position: absolute;
-        top: 12px;
-        right: 16px;
-        font-size: 48px;
-        font-weight: bold;
-        color: var(--colour-completed-square-tick);
-        z-index: 2;
-    }
-
-    .mobile-modal-card.completed::after {
-        display: block;
-    }
-}
+   
