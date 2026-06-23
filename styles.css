@@ -311,9 +311,14 @@ main {
         padding: 0;
     }
 
-    .mobile-modal-card {
+    .mobile-modal-inner {
+        position: relative;
         width: calc(100% - 16px);
         margin-top: 252.86px;
+    }
+
+    .mobile-modal-card {
+        width: 100%;
         aspect-ratio: 1 / 1;
         background: var(--colour-grid-square-background);
         border: 1px solid var(--colour-grid-square-border);
@@ -339,30 +344,21 @@ main {
     .mobile-modal-close {
         position: absolute;
         top: -24px;
-        right: 0;
-    
+        right: -4px;
         width: 48px;
         height: 48px;
-    
         border: none;
         border-radius: 50%;
-    
         background: var(--colour-nav-tab-background);
         color: white;
-    
         font-size: 32px;
         line-height: 1;
-    
         cursor: pointer;
-    
         display: flex;
         align-items: center;
         justify-content: center;
-    
         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        z-index: 1000;
     }
 
-    .mobile-modal-inner {
-        position: relative;
-    }
 }
