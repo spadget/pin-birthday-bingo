@@ -241,14 +241,14 @@ main {
 }
 /* Home page content box */
 
-#home p {
+.home-content {
     background: var(--colour-grid-square-background);
     margin-top: 10px;
     padding: 24px;
 }
 
 @media (max-width: 700px) {
-    #home p {
+    .home-content {
         margin: 8px;
         padding: 16px;
     }
