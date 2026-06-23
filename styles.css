@@ -338,16 +338,21 @@ main {
 
     .mobile-modal-close {
         position: absolute;
-        top: 16px;
-        right: 16px;
+        top: -24px;
+        right: 0;
+    
         width: 48px;
         height: 48px;
+    
         border: none;
         border-radius: 50%;
+    
         background: var(--colour-nav-tab-background);
         color: white;
+    
         font-size: 32px;
         line-height: 1;
+    
         cursor: pointer;
     
         display: flex;
@@ -356,3 +361,8 @@ main {
     
         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
+
+    .mobile-modal-inner {
+        position: relative;
+    }
+}
