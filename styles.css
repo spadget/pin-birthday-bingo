@@ -375,3 +375,16 @@ h2,
     display: block;
     margin-bottom: 24px;
 }
+
+.mobile-modal-card {
+    line-height: 1.2;
+}
+
+.mobile-modal-card strong {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.mobile-modal-card p {
+    margin: 12px 0 0;
+}
