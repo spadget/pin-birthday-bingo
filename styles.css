@@ -51,6 +51,12 @@ h2 {
     font-family: var(--font-heading);
 }
 
+h1,
+h2,
+.tab-button {
+    font-weight: 400;
+}
+
 h1 {
     padding: 0 0 0 24px;
     font-size: 50px;
@@ -111,7 +117,6 @@ nav {
     box-shadow: -8px 8px 0 8px var(--colour-nav-tab-background);
 }
 
-
 main {
     background: transparent;
     padding: 0;
@@ -139,6 +144,12 @@ main {
 .tab-content > p {
     padding: 24px;
     margin: 0;
+}
+
+.home-content {
+    background: var(--colour-grid-square-background);
+    margin-top: 10px;
+    padding: 24px;
 }
 
 .bingo-grid {
@@ -172,10 +183,49 @@ main {
     color: var(--colour-completed-square-text);
 }
 
+.desktop-challenge-text {
+    display: inline;
+}
 
 .mobile-number {
+    display: none;
     font-family: var(--font-mobile-numbers);
     color: var(--colour-grid-square-number);
+}
+
+.completed-image {
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bingo-square.completed .completed-image {
+    display: block;
+}
+
+.bingo-square.completed .desktop-challenge-text,
+.bingo-square.completed .mobile-number {
+    display: none;
+}
+
+.mobile-modal {
+    display: none;
+}
+
+.mobile-modal-card {
+    line-height: 1.2;
+}
+
+.mobile-modal-card strong {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.mobile-modal-card p {
+    margin: 12px 0 0;
 }
 
 .toast {
@@ -227,6 +277,11 @@ main {
         padding: 10px;
     }
 
+    .home-content {
+        margin: 8px;
+        padding: 16px;
+    }
+
     .bingo-grid {
         width: 100%;
         margin: 0;
@@ -237,67 +292,16 @@ main {
     .bingo-square {
         padding: 4px;
     }
-}
-/* Home page content box */
 
-.home-content {
-    background: var(--colour-grid-square-background);
-    margin-top: 10px;
-    padding: 24px;
-}
-
-@media (max-width: 700px) {
-    .home-content {
-        margin: 8px;
-        padding: 16px;
-    }
-}
-
-.mobile-number {
-    display: none;
-}
-
-.desktop-challenge-text {
-    display: inline;
-}
-
-@media (max-width: 700px) {
     .desktop-challenge-text {
         display: none;
     }
 
     .mobile-number {
         display: inline;
-        font-family: var(--font-mobile-numbers);
-        color: var(--colour-grid-square-number);
         font-size: 1.6rem;
     }
-}
 
-.completed-image {
-    display: none;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.bingo-square.completed .completed-image {
-    display: block;
-}
-
-.bingo-square.completed .desktop-challenge-text,
-.bingo-square.completed .mobile-number {
-    display: none;
-}
-
-
-.mobile-modal {
-    display: none;
-}
-
-@media (max-width: 700px) {
     .mobile-modal.active {
         display: flex;
         position: fixed;
@@ -322,6 +326,7 @@ main {
         background: var(--colour-grid-square-background);
         border: 1px solid var(--colour-grid-square-border);
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -356,35 +361,7 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         z-index: 1000;
     }
-
-}
-
-h1,
-h2,
-.tab-button {
-    font-weight: 400;
-}
-.mobile-modal-card {
-    display: block;
-}
-
-.mobile-modal-card strong {
-    display: block;
-    margin-bottom: 24px;
-}
-
-.mobile-modal-card {
-    line-height: 1.2;
-}
-
-.mobile-modal-card strong {
-    display: block;
-    margin-bottom: 12px;
-}
-
-.mobile-modal-card p {
-    margin: 12px 0 0;
 }
