@@ -1,0 +1,17 @@
+name: Piniverse check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send ntfy test
+        run: |
+          curl \
+            -H "Title: Piniverse test" \
+            -H "Tags: pushpin,rainbow" \
+            -d "GitHub can send notifications successfully 🎉" \
+            https://ntfy.sh/piniverse-rainbow-7f3m2x91q
