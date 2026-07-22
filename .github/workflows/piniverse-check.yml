@@ -31,8 +31,6 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
             "${{ secrets.SUPABASE_URL }}/rest/v1/bingo_progress?select=item&completed=eq.true")
 
-          echo "$response"
-
           count=$(echo "$response" | jq length)
 
           echo "Completed squares: $count"
