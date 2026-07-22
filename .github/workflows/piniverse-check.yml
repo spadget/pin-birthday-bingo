@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: 22
 
+      - name: Read previous state
+        id: state
+        run: |
+            echo "completed=$(node -pe "require('./.piniverse-state.json').completed")" >> $GITHUB_OUTPUT
+
       - name: Send ntfy test
         run: |
           curl \
