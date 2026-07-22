@@ -25,21 +25,21 @@ jobs:
         run: |
             echo "completed=$(node -pe "require('./.piniverse-state.json').completed")" >> $GITHUB_OUTPUT
 
-            - name: Count completed squares
-            run: |
-              response=$(curl -s \
-                -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-                -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
-                "${{ secrets.SUPABASE_URL }}/rest/v1/bingo_progress?select=item&completed=eq.true")
-    
-              echo "$response"
-    
-              count=$(echo "$response" | jq length)
-    
-              echo "Completed squares: $count"
+      - name: Count completed squares
+    run: |
+        response=$(curl -s \
+        -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+        -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+        "${{ secrets.SUPABASE_URL }}/rest/v1/bingo_progress?select=item&completed=eq.true")
+
+        echo "$response"
+
+        count=$(echo "$response" | jq length)
+
+        echo "Completed squares: $count"
 
       - name: Send ntfy test
-        run: |
+    run: |
           curl \
             -H "Title: Piniverse test" \
             -H "Tags: pushpin,rainbow" \
