@@ -35,6 +35,11 @@ jobs:
 
           echo "Completed squares: $count"
 
+      - name: Compare counts
+        run: |
+          echo "Previous: ${{ steps.state.outputs.completed }}"
+          echo "Current: $count"
+
       - name: Send ntfy test
         run: |
           curl \
