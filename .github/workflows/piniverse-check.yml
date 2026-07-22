@@ -37,10 +37,16 @@ jobs:
           echo "Completed squares: $count"
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
-      - name: Compare counts
+      - name: Notify if progress increased
+        if: ${{ fromJSON(steps.count.outputs.count) > fromJSON(steps.state.outputs.completed) }}
         run: |
-          echo "Previous: ${{ steps.state.outputs.completed }}"
-          echo "Current: ${{ steps.count.outputs.count }}"
+          increase=$(( ${{ steps.count.outputs.count }} - ${{ steps.state.outputs.completed }} ))
+
+          curl --fail --silent --show-error \
+            -H "Title: Piniverse update 📌" \
+            -H "Tags: tada,pushpin" \
+            -d "Pin completed $increase more square(s)! Total progress: ${{ steps.count.outputs.count }}/50" \
+            "https://ntfy.sh/${{ secrets.NTFY_TOPIC }}"
 
       - name: Update saved count
         run: |
@@ -62,17 +68,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           if git diff --quiet -- .piniverse-state.json; then
-            echo "Count has not changed. Nothing to commit."
+            echo "Count has not changed."
           else
             git add .piniverse-state.json
             git commit -m "Update Piniverse progress state"
             git push
           fi
-
-      - name: Send ntfy test
-        run: |
-          curl --fail --silent --show-error \
-            -H "Title: Piniverse test" \
-            -H "Tags: pushpin,rainbow" \
-            -d "GitHub can send notifications successfully 🎉" \
-            "https://ntfy.sh/${{ secrets.NTFY_TOPIC }}"
