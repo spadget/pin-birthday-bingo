@@ -26,4 +26,4 @@ jobs:
             -H "Title: Piniverse test" \
             -H "Tags: pushpin,rainbow" \
             -d "GitHub can send notifications successfully 🎉" \
-            https://ntfy.sh/piniverse-rainbow-7f3m2x91q
+            https://ntfy.sh/${{ secrets.NTFY_TOPIC }}
