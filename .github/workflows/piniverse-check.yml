@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 jobs:
-  test-notification:
+  check-progress:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,7 @@ jobs:
           echo "completed=$(node -pe "require('./.piniverse-state.json').completed")" >> $GITHUB_OUTPUT
 
       - name: Count completed squares
+        id: count
         run: |
           response=$(curl -s \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
@@ -34,11 +35,12 @@ jobs:
           count=$(echo "$response" | jq length)
 
           echo "Completed squares: $count"
+          echo "count=$count" >> $GITHUB_OUTPUT
 
       - name: Compare counts
         run: |
           echo "Previous: ${{ steps.state.outputs.completed }}"
-          echo "Current: $count"
+          echo "Current: ${{ steps.count.outputs.count }}"
 
       - name: Send ntfy test
         run: |
