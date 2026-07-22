@@ -22,12 +22,12 @@ jobs:
       - name: Read previous state
         id: state
         run: |
-          echo "completed=$(node -pe "require('./.piniverse-state.json').completed")" >> $GITHUB_OUTPUT
+          echo "completed=$(node -pe "require('./.piniverse-state.json').completed")" >> "$GITHUB_OUTPUT"
 
       - name: Count completed squares
         id: count
         run: |
-          response=$(curl -s \
+          response=$(curl --fail --silent --show-error \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
             "${{ secrets.SUPABASE_URL }}/rest/v1/bingo_progress?select=item&completed=eq.true")
@@ -35,17 +35,44 @@ jobs:
           count=$(echo "$response" | jq length)
 
           echo "Completed squares: $count"
-          echo "count=$count" >> $GITHUB_OUTPUT
+          echo "count=$count" >> "$GITHUB_OUTPUT"
 
       - name: Compare counts
         run: |
           echo "Previous: ${{ steps.state.outputs.completed }}"
           echo "Current: ${{ steps.count.outputs.count }}"
 
+      - name: Update saved count
+        run: |
+          node -e "
+            const fs = require('fs');
+            fs.writeFileSync(
+              '.piniverse-state.json',
+              JSON.stringify(
+                { completed: Number('${{ steps.count.outputs.count }}') },
+                null,
+                2
+              ) + '\n'
+            );
+          "
+
+      - name: Commit updated count
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- .piniverse-state.json; then
+            echo "Count has not changed. Nothing to commit."
+          else
+            git add .piniverse-state.json
+            git commit -m "Update Piniverse progress state"
+            git push
+          fi
+
       - name: Send ntfy test
         run: |
-          curl \
+          curl --fail --silent --show-error \
             -H "Title: Piniverse test" \
             -H "Tags: pushpin,rainbow" \
             -d "GitHub can send notifications successfully 🎉" \
-            https://ntfy.sh/${{ secrets.NTFY_TOPIC }}
+            "https://ntfy.sh/${{ secrets.NTFY_TOPIC }}"
