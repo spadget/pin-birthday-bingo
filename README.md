@@ -43,7 +43,33 @@ This repository contains the live production version of the site.
 
 ### `CNAME`
 
-Connects this repository to:
+The `CNAME` file connects this repository to:
 
-```text
-piniverse.co.uk
+`piniverse.co.uk`
+
+Do not delete it or copy it into staging.
+
+### GitHub Actions
+
+The workflows in `.github/workflows` may run scheduled production processes and notifications.
+
+Do not use production workflows for staging tests.
+
+## Safety rules
+
+- Test unfinished work in staging, not here.
+- Check which repository is open before editing or pushing.
+- Never commit passwords, private keys or Supabase service-role keys.
+- Review changes carefully before pushing to `main`.
+- Keep production-specific files separate from staging-specific files.
+
+## Technology
+
+Piniverse currently uses:
+
+- HTML
+- CSS
+- JavaScript
+- GitHub Pages
+- Supabase
+- GitHub Actions
